@@ -51,7 +51,9 @@ export class ComponenteB {
         alert("Los campos no pueden estar vacios");
         return;
       }
+      
 
+      //Conversion del formato de fecha para que se quede en el español 
       const fechaEu = new Date(this.newNoticia.fecha);
       const fechaFormateo = fechaEu.toLocaleDateString('es-ES');
 
