@@ -1,90 +1,44 @@
-<div class="container my4">
-    <div class="rowg-4">
+<div class="contenedor-blog">
+    <!-- Panel izquierdo -->
+    <div class="panel-izquierdo">
+        <h2> Añade una noticia</h2>
 
-        <!--Para meter noticia-->
-        <div class="col-12 col-lg-4">
-            <h2>Añade una noticia</h2>
-            <form (submit)="agregarNoticia()" #formNoticia="ngForm">
+        <form (submit)="agregarNoticia()" #formNoticia="ngForm">
+            <!--Titulo-->
+            <label for="titulo">Título</label>
+            <input id="titulo" type="text" [(ngModel)]="newNoticia.titulo" name="titulo" required/>
 
-             <!--Titulo-->
-             <div class="mb-3">
-                <label for="Titulo" class="form-label">Titulo</label>
-                <input id="Titulo" type="text" class="form-control"
-                        [(ngModel)]="newNoticia.titulo" name="titulo" required>
-             </div>
+            <!--Imagen-->
+            <label for="imagen">URL de la imagen</label>
+            <input id="imagen" type="url" [(ngModel)]="newNoticia.imagen" name="imagen" required/>
 
+            <!--Texto-->
+            <label for="texto">Texto</label>
+            <textarea id="texto" rows="4" [(ngModel)]="newNoticia.texto" name="texto" required></textarea>
 
-             <!--Imagen-->
-             <div class="mb-3">
-                <label for="imagen" class="form-label">URL de la Imagen</label>
-                <input id="imagen" type="url" class="form-control"
-                        [(ngModel)]="newNoticia.imagen" name="imagen" required>
-             </div>
+            <!--Fecha-->
+            <label for="fecha">Fecha</label>
+            <input id="fecha" type="date" [(ngModel)]="newNoticia.fecha" name="fecha" required/>
 
-
-             <!--Texto-->
-             <div class="mb-3">
-                <label for="texto" class="form-label">Texto de la noticia</label>
-                <textarea id="texto" class="form-control" rows="4"
-                        [(ngModel)]="newNoticia.texto" name="texto" required></textarea>
-             </div>
-
-
-             <!--Fecha-->
-             <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha</label>
-                <input id="fecha" type="date" class="form-control"
-                        [(ngModel)]="newNoticia.fecha" 
-                        name="fecha"
-                        required>
-             </div>
-
-
-             <!--Botón para agregar la noticia-->
-
-             <button type="submit" class="btn btn-primary"
-                    >
-                 Publicar noticia
-             </button>
-            </form>
-        </div>
-
-        <!--Lista de noticias-->
-        <div class="col-12 col-lg-8">
-
-            <h2>Noticias del día</h2>
-            <div class="row g-3">
-            
-              @for (noticia of noticias; track noticia) {
-                <div class="col-12">
-                    <div class="card mb-3 shadow-sm">
-
-                        <!--Título-->
-                        <div class="card-body">
-                            <h5 class="card-title">{{ noticia.titulo}}</h5>
-                        </div>
-
-                        <!--Imagen-->
-                        <img [src]="noticia.imagen" class="img-fluid" alt="{{ noticia.titulo }}">
-
-                        <!--Texto y fecha-->
-                        <div class="card-body">
-                            <p class="card-text">{{ noticia.texto }}</p>
-                            <small class="text-muted">Fecha: {{ noticia.fecha  }}</small>
-                        </div>
-
-                    </div>
-
-                </div>
-
-              }
-
-            </div>
-
-        </div>
-
-
-
+            <button type="submit">Publicar noticia</button>
+        </form>
     </div>
 
+    <!-- Panel derecho -->
+    <div class="panel-derecho">
+        <h2> Noticias del día</h2>
+
+        <div class=" lista-noticias ">
+            @for (noticia of noticias; track noticia) {
+            <div class="card ">
+                <img [src]="noticia.imagen" alt="{{ noticia.titulo }}" />
+                <div class="card-body ">
+                    <h5>{{noticia.titulo}}</h5>
+                    <p>{{noticia.texto}}</p>
+                    <small> {{noticia.fecha}}</small>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
 </div>

@@ -1,13 +1,157 @@
-.contenedor{
-    display:flex;
+/* Contenedor principal en dos columnas */
+
+.contenedor-blog {
+    display: flex;
     justify-content: space-between;
-    
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
-.izquierda{
-    float: left;
+
+/* Parte izquierda */
+
+.panel-izquierdo {
+    flex: 1 1 30%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.derecha{
-    float: right;
+.panel-izquierdo h2 {
+    margin-bottom: 1rem;
+    color: #ff6f00;
+    /* naranja */
+    border-bottom: 2px solid #ff6f00;
+    /* naranja */
+    padding-bottom: 0.5rem;
+}
+
+.panel-izquierdo form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.panel-izquierdo input,
+.panel-izquierdo textarea {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+
+.panel-izquierdo button {
+    margin-top: 1rem;
+    background: #ff6f00;
+    /* naranja */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.panel-izquierdo button:hover {
+    background: #e65c00;
+    /* naranja oscuro */
+    transform: scale(1.03);
+}
+
+
+/* Parte derecha */
+
+.panel-derecho {
+    flex: 1 1 65%;
+}
+
+.panel-derecho h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Lista de noticias */
+
+.lista-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+
+/* Tarjetas */
+
+.card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-body h5 {
+    margin: 0 0 0.5rem;
+    color: #000;
+    /* negro */
+}
+
+.card-body p {
+    margin: 0 0 0.5rem;
+    color: #444;
+}
+
+.card-body small {
+    color: #777;
+    font-style: italic;
+}
+
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .contenedor-blog {
+        flex-direction: column;
+    }
+    .panel-izquierdo,
+    .panel-derecho {
+        width: 100%;
+    }
+    .panel-izquierdo {
+        margin-bottom: 2rem;
+    }
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+    }
 }
