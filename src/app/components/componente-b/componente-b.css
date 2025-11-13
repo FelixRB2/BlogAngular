@@ -11,3 +11,34 @@
 .derecha{
     float: right;
 }
+
+.img{
+    max-width: 100px;
+    height: auto;
+
+}
+
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    /*position: absolute;*/
+    align-items: center;
+    border: 1px solid black;
+
+
+
+}
+
+.tarjeta_head{
+    display: flex;
+    width: 100%;
+    max-height: 200px;
+    border: 1px solid black;
+}
+
+.tarjeta_head img {
+    object-fit: cover;
+    width: 100%;
+}
+
