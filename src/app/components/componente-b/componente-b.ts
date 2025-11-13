@@ -1,7 +1,6 @@
 import { InterfaceB } from './../../interfaces/interface-b';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
 
 
 

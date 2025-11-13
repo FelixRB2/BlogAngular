@@ -1,0 +1,13 @@
+.contenedor{
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.izquierda{
+    float: left;
+}
+
+.derecha{
+    float: right;
+}
