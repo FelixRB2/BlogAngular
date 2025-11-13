@@ -56,7 +56,7 @@ export class ComponenteB {
       texto: "",
       fecha: ""
     };
-    alert("noticia subida");
+    alert("noticia subida con exito");
   }
 
 }
