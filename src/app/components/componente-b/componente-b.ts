@@ -15,7 +15,7 @@ export class ComponenteB {
 
   
 
-  //Para usar el Two Way Data Binding necesitamos importar la libreria de FormsModule y la directivda ngModel
+  
   noticias : InterfaceB []  = [
 
     {
