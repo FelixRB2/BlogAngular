@@ -1,6 +1,7 @@
 import { InterfaceB } from './../../interfaces/interface-b';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -13,25 +14,26 @@ import { FormsModule } from '@angular/forms';
 
 export class ComponenteB {
 
+  
 
   //Para usar el Two Way Data Binding necesitamos importar la libreria de FormsModule y la directivda ngModel
   noticias : InterfaceB []  = [
 
     {
 
-      titulo: "noticia de prueba",
-      imagen: "assets/1366_2000-convertido-de-webp.png",
-      texto: "esto es un texto de una noticia 1",
+      titulo: "Científicos descubren un bosque subterráneo",
+      imagen: "https://static.dw.com/image/61777936_804.jpg",
+      texto: "Un equipo internacional de geólogos y biólogos ha anunciado el hallazgo de un bosque subterráneo intacto bajo una cueva en Ocaña. El ecosistema, que se estima tiene más de 20.000 años de antigüedad, alberga especies vegetales desconocidas y microorganismos que podrían revolucionar la medicina moderna.",
       fecha: "11/11/2025"
 
     },
 
     {
 
-      titulo: "noticia de prueba2",
-      imagen: 'assets/1366_2000-convertido-de-webp.png',
-      texto: 'esto es un texto de una noticia 1',
-      fecha: '11/11/2025'
+      titulo: "Japón inaugura el primer tren hipersónico para pasajeros",
+      imagen: "https://i.ytimg.com/vi/SUBUTo82EQw/maxresdefault.jpg",
+      texto: "Japón ha presentado oficialmente el Shinkansen H1, el primer tren hipersónico del mundo capaz de alcanzar velocidades de hasta 1.200 km/h gracias a un sistema de levitación magnética avanzada y túneles presurizados",
+      fecha: "10/11/2025"
 
     }
 
@@ -49,7 +51,11 @@ export class ComponenteB {
         alert("Los campos no pueden estar vacios");
         return;
       }
-      this.noticias.push ({ ...this.newNoticia});
+
+      const fechaEu = new Date(this.newNoticia.fecha);
+      const fechaFormateo = fechaEu.toLocaleDateString('es-ES');
+
+      this.noticias.push ({...this.newNoticia, fecha: fechaFormateo});
       this.newNoticia = {
       titulo: "",
       imagen: "",

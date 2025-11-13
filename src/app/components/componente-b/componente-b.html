@@ -34,14 +34,16 @@
              <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha</label>
                 <input id="fecha" type="date" class="form-control"
-                        [(ngModel)]="newNoticia.fecha" name="fecha" required>
+                        [(ngModel)]="newNoticia.fecha" 
+                        name="fecha"
+                        required>
              </div>
 
 
              <!--Botón para agregar la noticia-->
 
              <button type="submit" class="btn btn-primary"
-                    [disabled]="!formNoticia.valid">
+                    >
                  Publicar noticia
              </button>
             </form>
@@ -68,7 +70,7 @@
                         <!--Texto y fecha-->
                         <div class="card-body">
                             <p class="card-text">{{ noticia.texto }}</p>
-                            <small class="text-muted">Fecha: {{ noticia.fecha }}</small>
+                            <small class="text-muted">Fecha: {{ noticia.fecha  }}</small>
                         </div>
 
                     </div>
