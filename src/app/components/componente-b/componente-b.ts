@@ -45,7 +45,7 @@ export class ComponenteB {
     }
 
     agregarNoticia() {
-      if(!this.newNoticia.titulo || this.newNoticia.imagen || this.newNoticia.texto || this.newNoticia.fecha) {
+      if(!this.newNoticia.titulo || !this.newNoticia.imagen || !this.newNoticia.texto || !this.newNoticia.fecha) {
         alert("Los campos no pueden estar vacios");
         return;
       }
